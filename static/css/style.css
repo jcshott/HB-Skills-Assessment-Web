@@ -1,0 +1,52 @@
+body {
+	background-color: #8FA437
+}
+h1 {
+	color: #913034;
+	font-family: 'Arvo', serif; 
+	font-weight: bold; 
+	font-size: 40px
+}
+
+h2 {
+	color: #913034;
+	font-family: 'Arvo', serif; 
+	font-weight: bold; 
+}
+
+#instructions {
+	text-align: left;
+	font-family: 'Droid Sans';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 20px;
+	border: 1px solid black;
+
+}
+
+#confirmation {
+	text-align: left;
+	font-style: italic;
+	font-weight: 400;
+	font-size: 20px
+}
+
+label {
+
+    font-size: 20px
+}
+
+#lastname {
+	font-weight: bold
+}
+
+.input {
+	background-color: yellow
+}
+
+img {
+	margin: 40px auto;
+	width: 30%
+	display: block;
+
+}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Application Form</title>
+		<link rel="stylesheet" href="../static/css/style.css">
+		<link href='http://fonts.googleapis.com/css?family=Droid+Sans|Arvo:400,700|Vollkorn' rel='stylesheet' type='text/css'>
+	</head>
+	
+	<body>
+		<h1>Application Form</h1>
+		
+		<p id="instructions">Thank you for your interest in Ubermelon.  Please provide the following information to initialize your application.</p>
+
+		<form action="/application" method="post">
+		<label>First Name:
+			<input class="input" type="text" name="firstname">
+		</label><br>
+		<label id="lastname">Last Name:
+			<input class="input" type="text" name="lastname">
+		</label><br>
+		<label>Salary requirement:
+			<input class="input" type="text" name="salary">
+		</label><br>
+		<label>Job you are applying for:
+			<select class="input" name="job">
+				<option value="software">Software Engineer
+				<option value="qa">QA Engineer
+				<option value="product">Product Manager
+			</select>
+		</label>
+
+			<input class="input" type="submit">
+
+		</form>
+
+		<img src="http://www.pkdiet.com/images/food/melon.gif">
+
+	</body>
+</html>
