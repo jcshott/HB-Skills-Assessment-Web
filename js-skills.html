@@ -275,7 +275,7 @@
 <script> 
 // Katie taught us how to use 'this' :)
   function changeImage(evt) {
-    $(this).attr("src", "http://i1353.photobucket.com/albums/q667/MrsStephHoward/SPD_DogGiftBasket/rhodesian-ridgeback-puppy_zps87234412.jpg")
+    $(this).attr("src", "https://scontent.fsnc1-1.fna.fbcdn.net/hphotos-xpf1/v/t1.0-9/11018823_10102908196168414_6896931806720164461_n.jpg?oh=c79a8cd994bf471ce30e9fd1038ae19d&oe=56530C2B")
   }
 
   $("img#kittenz-rule").dblclick(changeImage)
@@ -472,6 +472,50 @@ $("#play-guessing-game").on("click", getRandom);
 </fieldset>
 
 <script>
+function startGame(evt) {
+  $("#try-this-number").prop("disabled", false);
+  $("#number-guessed").prop("disabled", false);
+  $("#play-guessing-game-2").prop("disabled", true);
+  $("#number-guessing-msg").html("Guess the secret number, between 1 - 100");
+  number = Math.floor(Math.random() * (100-1 + 1)) + 1;
+}
+
+function playGame2(evt) {
+  guess = Number($("#number-guessed").val())
+  // console.log("number = " + number);
+  // console.log("guess is " + guess);
+  // console.log(typeof guess);
+  evt.preventDefault();
+
+ // while (guess !== number) {
+    if (guess > number) {
+      $("#number-guessing-msg").html("Too high, try again.");
+      $("#number-guessed").val('')
+    }
+    else if (guess < number) {
+      $("#number-guessing-msg").html("Too low, try again.");
+      $("#number-guessed").val('')
+    }
+    else {
+      $("#number-guessing-msg").html("CONGRATS! You guessed it. The secret number was " + number);
+      
+      var newGame = confirm("Do you want to play again?")
+
+      if (newGame === true) {
+        $("#try-this-number").prop("disabled", true);
+        $("#number-guessed").prop("disabled", true);
+        $("#play-guessing-game-2").prop("disabled", false);
+        $("#number-guessing-msg").html("");
+        $("#number-guessed").val('')
+      }
+    }
+ //   }
+    
+    // alert("You guessed it! The number was " + number);
+}
+
+$("#play-guessing-game-2").on("click", startGame)
+$("#try-this-number").on("click", playGame2)
   // put your code here
 </script>
 
